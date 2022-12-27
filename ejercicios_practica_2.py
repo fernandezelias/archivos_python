@@ -48,6 +48,34 @@ def desafio():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    
+    while True:
+
+        print(''' 
+        PRODUCTOS DISPONIBLES:
+        1- Tornillos
+        2- Tuercas
+        3- Arandelas
+        4- FIN: salir del programa
+        ''')
+        
+        producto = str(input('Ingrese el producto que desea agregar al stock:\n'))
+        
+        if producto == "1" and "tornillos" in stock:
+            stock['tornillos'] += int(input('¿Cuántos tornillos desea ingresar al stock?\n'))
+                                    
+        elif producto == "2" and "tuercas" in stock:
+            stock['tuercas'] += int(input('¿Cuántas tuercas desea ingresar al stock?\n'))
+            
+        elif producto == "3" and "arandelas" in stock:
+            stock['arandelas'] += int(input('¿Cuántas arandelas desea ingresar al stock?\n'))
+
+        elif producto == "4":
+            break
+    
+    print(f"El stock actualizado de productos es:", stock)
+    return stock
+    
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")

@@ -40,6 +40,26 @@ def desafio(ambientes):
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    csvfile = open('propiedades.csv')
+
+    propiedades = list(csv.DictReader(csvfile))
+
+    propiedades_dos_ambientes = 0
+    propiedades_tres_ambientes = 0
+
+    for k in propiedades:
+        try:
+            ambientes = int(k['ambientes'])
+            if ambientes == 2:
+                propiedades_dos_ambientes += 1
+            elif ambientes == 3:
+                propiedades_tres_ambientes += 1
+        except:
+            print('dato faltante') 
+    
+    print(f'Propiedades con dos ambientes: {propiedades_dos_ambientes} | Propiedades con tres ambientes: {propiedades_tres_ambientes}')
+    
+    return propiedades_dos_ambientes, propiedades_tres_ambientes
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
